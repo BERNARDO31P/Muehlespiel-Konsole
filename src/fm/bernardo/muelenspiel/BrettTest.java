@@ -4,16 +4,21 @@ import java.util.Scanner;
 
 final class BrettTest {
 
+    private static void clearConsole () {
+        for (int i = 0; i < 100; ++i) System.out.println();
+    }
+
     public static void main(String[] args) {
 
         final Scanner scanner = new Scanner(System.in);
         Brett spielfeld = null;
+        clearConsole();
         System.out.print("© 2018 BERNARDO.FM - Alle Rechte vorbehalten.\nSie finden dieses Projekt auch auf GitLab: https://gitlab.com/bernardo31p/muehlenspiel\n\nWillkommen zum Mühlenspiel von Bernardo.\n\n1. Spielfeld generieren\n2. Spielfeld ausgeben\n3. Feld Informationen abfragen\n4. Spiel beenden\nZum Beginn, bitte einen Menüpunkt auswählen: ");
 
         while (true) {
 
             final String auswahl = scanner.nextLine();
-            for (int i = 0; i < 100; ++i) System.out.println();
+            clearConsole();
 
             // Alternative zu if / else / else if
             switch (auswahl) {
