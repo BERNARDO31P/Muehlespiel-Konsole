@@ -4,9 +4,8 @@ import java.util.Scanner;
 
 final class BrettTest {
 
-    private static void clearConsole () {
-        for (int i = 0; i < 100; ++i) System.out.println();
-    }
+    // Selber gemachte Funktion zum Berreinigen von der Konsole, da Java dies nicht besitzt
+    private static void clearConsole () { for (int i = 0; i < 100; ++i) System.out.println(); }
 
     public static void main(String[] args) {
 
@@ -27,6 +26,8 @@ final class BrettTest {
                     System.out.println((char) 27 + "[32m[ERFOLG] Spielfeld wurde erfolgreich generiert." + (char) 27 + "[39m");
                     break;
                 case "2":
+
+                    // Abfang, falls die Variable noch null ist
                     try {
                         spielfeld.spielfeldAusgeben();
                     } catch (NullPointerException e) {
@@ -35,8 +36,11 @@ final class BrettTest {
                     break;
                 case "3":
                     System.out.print("Bitte geben Sie die Koordinaten, per Komma getrennt, vom Feld ein: ");
+
+                    // Eingaben Abfang, sowie Aufteilung
                     final String[] koordinaten = scanner.nextLine().split(",");
 
+                    // Abfang, falls die Variable noch null ist, oder die Eingabe nicht verarbeitet werden kann
                     try {
                         spielfeld.feldInformationen(Integer.parseInt(koordinaten[0]), Integer.parseInt(koordinaten[1]));
                     } catch (NullPointerException e) {

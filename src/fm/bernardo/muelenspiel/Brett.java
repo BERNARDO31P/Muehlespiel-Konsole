@@ -34,12 +34,10 @@ final class Brett {
     // Funktion für die Suche vom Symbol mit der ID vom Feld
     private String findeSymbol(final int feldID) {
 
-        for (Map.Entry<String, List<Integer>> eintrag : symbole.entrySet()) {
-            for (int id : eintrag.getValue()) {
+        for (Map.Entry<String, List<Integer>> eintrag : symbole.entrySet())
+            for (int id : eintrag.getValue())
                 if (feldID == id)
                     return eintrag.getKey();
-            }
-        }
         return null;
 
     }
@@ -95,11 +93,14 @@ final class Brett {
 
     }
 
-    final void feldInformationen (final int x, final int y) {
+    // Funktion zum Abfragen, wem ein Feld gehört, oder es überhaupt spielbar ist
+    final void feldInformationen(final int x, final int y) {
 
+        // Gleiche Formel zum Berrechnen von der FeldID
         final int feldID = 7 * y + x;
         final Feld feld;
 
+        // Abfang, falls eine FeldID nicht existieren sollte im Array
         try {
             feld = spielfelder.get(feldID);
         } catch (IndexOutOfBoundsException e) {
@@ -107,16 +108,14 @@ final class Brett {
             return;
         }
 
-        if (!feld.spielbar) {
+        if (!feld.spielbar)
             System.out.println((char) 27 + "[33m[INFO] Dieses Feld ist nicht spielbar." + (char) 27 + "[39m");
-        } else if (feld.besitzer != null) {
-            for (final Spieler einzelnerSpieler : spieler) {
+        else if (feld.besitzer != null) {
+            for (final Spieler einzelnerSpieler : spieler)
                 if (feld.symbol.equals(einzelnerSpieler.symbol))
                     System.out.println((char) 27 + "[33m[INFO] Auf diesem Feld ist eine Figur vom Spieler" + einzelnerSpieler.id + "." + (char) 27 + "[39m");
-            }
-        } else {
+        } else
             System.out.println((char) 27 + "[33m[INFO] Dieses Feld ist frei." + (char) 27 + "[39m");
-        }
 
     }
 
