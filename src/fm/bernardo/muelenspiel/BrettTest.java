@@ -8,7 +8,7 @@ final class BrettTest {
 
         final Scanner scanner = new Scanner(System.in);
         Brett spielfeld = null;
-        System.out.print("© 2018 BERNARDO.FM - Alle Rechte vorbehalten.\nSie finden dieses Projekt auch auf GitHub: https://github.com/bernardo31p/muelenspiel/\n\nWillkommen zum Mühlenspiel von Bernardo.\n\n1. Spielfeld generieren\n2. Spielfeld ausgeben\n3. Feld Informationen abfragen\n4. Spiel beenden\nZum Beginn, bitte einen Menüpunkt auswählen: ");
+        System.out.print("© 2018 BERNARDO.FM - Alle Rechte vorbehalten.\nSie finden dieses Projekt auch auf GitLab: https://gitlab.com/bernardo31p/muehlenspiel\n\nWillkommen zum Mühlenspiel von Bernardo.\n\n1. Spielfeld generieren\n2. Spielfeld ausgeben\n3. Feld Informationen abfragen\n4. Spiel beenden\nZum Beginn, bitte einen Menüpunkt auswählen: ");
 
         while (true) {
 
