@@ -47,7 +47,7 @@ final class Brett {
     // Konstrukteur der Klasse Brett
     Brett(final int startBelegung) {
 
-         String[] spielbar = {"┏", "┓", "┗", "┛", "╋", "┻", "┫", "┣", "┳"};
+        final String[] spielbar = {"┏", "┓", "┗", "┛", "╋", "┻", "┫", "┣", "┳"};
         final Random r = new Random();
 
         // Schleife um dynamisch die Felder generieren
