@@ -35,18 +35,24 @@ final class BrettTest {
                     }
                     break;
                 case "3":
-                    System.out.print("Bitte geben Sie die Koordinaten, per Komma getrennt, vom Feld ein: ");
 
-                    // Eingaben Abfang, sowie Aufteilung
-                    final String[] koordinaten = scanner.nextLine().split(",");
+                    // Solange kein break ausgeführt wird. Nützlich, wenn die Benutzereingabe inkorrekt ist.
+                    while (true) {
+                        System.out.print("Bitte geben Sie die Koordinaten, per Komma getrennt, vom Feld ein: ");
 
-                    // Abfang, falls die Variable noch null ist, oder die Eingabe nicht verarbeitet werden kann
-                    try {
-                        spielfeld.feldInformationen(Integer.parseInt(koordinaten[0]), Integer.parseInt(koordinaten[1]));
-                    } catch (NullPointerException e) {
-                        System.out.println((char) 27 + "[31m[FEHLER] Sie haben noch kein Spielfeld generiert." + (char) 27 + "[39m");
-                    } catch (NumberFormatException e) {
-                        System.out.println((char) 27 + "[31m[FEHLER] Die Eingabe stimmt mit der Vorgabe nicht überein." + (char) 27 + "[39m");
+                        // Eingaben Abfang, sowie Aufteilung
+                        final String[] koordinaten = scanner.nextLine().split(",");
+
+                        // Abfang, falls die Variable noch null ist, oder die Eingabe nicht verarbeitet werden kann
+                        try {
+                            spielfeld.feldInformationen(Integer.parseInt(koordinaten[0]), Integer.parseInt(koordinaten[1]));
+                            break;
+                        } catch (NullPointerException e) {
+                            System.out.println((char) 27 + "[31m[FEHLER] Sie haben noch kein Spielfeld generiert." + (char) 27 + "[39m");
+                            break;
+                        } catch (NumberFormatException e) {
+                            System.out.println((char) 27 + "[31m[FEHLER] Die Eingabe stimmt mit der Vorgabe nicht überein. Bsp: x,y" + (char) 27 + "[39m");
+                        }
                     }
                     break;
                 case "4":
